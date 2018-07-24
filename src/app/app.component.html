@@ -1,20 +1,30 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<my-nav >
+</my-nav>
+<div class="grid-container">
+  <!--video autoplay muted loop id="myVideo" hight="264">
+    <source src="/assets/images/everhotsystem.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video-->
 
+  <!--gallery  [flexBorderSize]="3"
+            [flexImageSize]="7"
+            [maxRowsPerPage]="100"
+            [galleryName]="'yourGalleryName'"
+            [metadataUri]="'http://localhost:4200/assets/gallery/data.json'">
+
+  </gallery-->
+  <div class="cube-container">
+    <div class="photo-cube">
+
+      <img class="front" src="/assets/main1.jpg" alt="">
+
+      <img class="left" src="/assets/main2.jpg" alt="">
+      <img class="right" src="/assets/main3.jpg" alt="">
+      <img class="back" src="/assets/images/hebrew/easyinstall.png" alt="">
+
+    </div>
+  </div>
+</div>
+
+<my-dash></my-dash>
+<router-outlet class="myApp"></router-outlet>

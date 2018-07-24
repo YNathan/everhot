@@ -1,0 +1,16 @@
+[
+  {
+    "preview_xxs": {
+      "path": "/assets/images/download.jpg",
+
+      "height": 768
+    },
+    "preview_xs": {
+      "path": "/assets/images/hebrew/easyinstall.png",
+
+      "height": 768
+    },
+
+    "dominantColor": "#a6a6a6"
+  }
+]

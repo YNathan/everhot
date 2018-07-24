@@ -1,0 +1,44 @@
+ul { padding:0; width:780px; margin:20px auto}
+li { display:inline;}
+.tn{
+  margin:2px 0px;
+  box-shadow:#999 1px 1px 3px 1px;
+  cursor: pointer
+}
+.modal-content {
+  width: 670px !important;
+}
+.selectedImage{
+  width:640px;
+  position:relative }
+.caption{
+  position:absolute;
+  height:70px;
+  width:100%;
+  top:410;
+  left:0;
+  opacity:0.9;
+  background-color:black;
+  color:white;
+  padding:5px;
+  font-family:verdana;
+  font-size:12px;
+}
+p {
+  -webkit-margin-before: 5px !important;
+  -webkit-margin-after: 5px !important;
+}
+.btn-back, .btn-forward{
+  position:absolute;
+  opacity:0.9;
+  background-color:black;
+  padding:10px;
+  top:190;
+  color:white;
+  text-weight:bold;
+  cursor:pointer;
+}
+
+.btn-forward{
+  left:612;
+}

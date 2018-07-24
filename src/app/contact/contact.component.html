@@ -1,0 +1,20 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" formControlName="name" placeholder="Your name..">
+    <label for="fmail">Email</label>
+    <input type="text" id="fmail" formControlName="email" placeholder="Your mail..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="israel">Israel</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" formControlName="message" placeholder="Write something.." style="height:200px"></textarea>
+    <input type="submit" [disabled]="form.invalid" value="Submit">
+  </form>
+</div>

@@ -1,0 +1,43 @@
+<!--video autoplay muted loop id="myVideo" hight="264">
+  <source src="/assets/images/everhotsystem.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video-->
+
+<!--gallery  [flexBorderSize]="3"
+          [flexImageSize]="7"
+          [maxRowsPerPage]="100"
+          [galleryName]="'yourGalleryName'"
+          [metadataUri]="'http://localhost:4200/assets/gallery/data.json'">
+
+</gallery-->
+<div class="container">
+  <div class="row">
+    <img
+      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/easyinstall.png' : '/assets/images/english/easyinstall.png'"
+      alt="" width="164">
+    <img
+      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/money.png' : '/assets/images/english/money.png'"
+      alt="" width="164">
+  </div>
+  <div class="row">
+    <img
+      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/alerting.png' : '/assets/images/english/alerting.png'"
+      src="/assets/images/english/alerting.png" alt="" width="164">
+    <img src="/assets/PANEL.png" alt="" width="264">
+    <img
+      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/madeinisrael.png' : '/assets/images/english/madeinisrael.png'"
+      src="/assets/images/english/madeinisrael.png" alt="" width="164">
+  </div>
+  <div class="row">
+    <img
+      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/integrated.png' : '/assets/images/english/integrated.png'"
+      alt="" width="164">
+    <img
+      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/shabbat.png' : '/assets/images/english/shabbat.png'"
+      alt="" width="164">
+    <img
+      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/avnit.png' : '/assets/images/english/avnit.png'"
+      alt="" width="164">
+  </div>
+</div>
+
