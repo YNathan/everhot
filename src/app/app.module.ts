@@ -35,7 +35,8 @@ import {DetailsUploadComponent} from './upload/details-upload/details-upload.com
 const appRoutes: Routes = [
   {path: 'guide', component: GuideComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'gallery', component: GalleryComponent}
+  {path: 'gallery', component: GalleryComponent},
+  {path: 'dashboard', component: MyDashComponent}
 ];
 
 @NgModule({

@@ -10,7 +10,7 @@ import { FileUpload } from './fileupload';
 })
 export class UploadFileService {
 
-  private basePath = '/';
+  private basePath = '/files';
 
   constructor(private db: AngularFireDatabase) { }
 

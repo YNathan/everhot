@@ -1,10 +1,10 @@
 <script src="../upload-file.service.ts"></script>
-<div class="modal fade" id="selectedImageModal" >
+<!--div class="modal fade" id="selectedImageModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
         <div class="selectedImage" *ngIf="selectedImage">
-          <img src="{{selectedImage.url}}" >
+          <img src="{{selectedImage.url}}">
           <div class="arrow-back" (click)=navigate(false)>
             &lt;
           </div>
@@ -22,13 +22,26 @@
 </div>
 <ul id="thumbnailsList" *ngFor="let fileUploads of albums">
   <h1 [ngStyle]="{'text-align': 'center'}">{{fileUploads.areaName}}</h1>
-  <li *ngFor="let image of fileUploads.photos" >
+  <li *ngFor="let image of fileUploads.photos">
     <img src="{{image.url}}" class="tn"
          width="191" height="146"
          data-toggle="modal" data-target="#selectedImageModal"
          (click)=setSelectedImage(fileUploads.photos,image)>
   </li>
-</ul>
+</ul-->
 
+<ul>
+  <li *ngFor="let area of areas">
+    <button class="punch" (click)="setSelectedArea(area)">{{area}}</button>
+  </li>
+</ul>
+<ul *ngIf="selectedArea != null" id="thumbnailsList">
+  <li *ngFor="let photo of selectedAlbum">
+    <img src="{{photo.url}}" class="tn"
+         width="191" height="146"
+         data-toggle="modal" data-target="#selectedImageModal"
+         (click)=setSelectedImage(selectedAlbum,photo)>
+  </li>
+</ul>
 
 

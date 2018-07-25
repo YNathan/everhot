@@ -11,6 +11,8 @@ export class ListUploadComponent implements OnInit {
 
   albums = [];
   areas = [];
+  selectedArea = null;
+  selectedAlbum = [];
 
   constructor(private uploadService: UploadFileService) {
   }
@@ -57,6 +59,15 @@ export class ListUploadComponent implements OnInit {
     var index = this.selectedPhotosArray.indexOf(this.selectedImage) + (forward ? 1 : -1);
     if (index >= 0 && index < this.selectedPhotosArray.length) {
       this.selectedImage = this.selectedPhotosArray[index];
+    }
+  }
+
+  setSelectedArea(area: any) {
+    this.selectedArea = area;
+    for (let i in this.albums) {
+      if (this.albums[i].areaName == area) {
+        this.selectedAlbum = this.albums[i].photos;
+      }
     }
   }
 }

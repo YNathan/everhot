@@ -15,6 +15,7 @@ export class MyNavComponent implements OnInit {
     .pipe(
       map(result => result.matches)
     );
+   displayimage = true;
 
 
   constructor(private breakpointObserver: BreakpointObserver, public globals: Globals) {
@@ -23,4 +24,7 @@ export class MyNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  dontShowImage() {
+    this.displayimage = false;
+  }
 }

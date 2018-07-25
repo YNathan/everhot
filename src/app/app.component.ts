@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 export class AppComponent {
   files: any;
 
-  constructor(db: AngularFireDatabase) {
-    this.files = db.list('/files').valueChanges().subscribe(files => {
-      console.log(files);
-    });
-    console.log(this.files);
+  constructor(rt: Router) {
+    rt.navigate(['/dashboard']);
   }
 }
