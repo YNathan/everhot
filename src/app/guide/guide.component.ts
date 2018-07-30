@@ -8,7 +8,7 @@ import {Globals} from '../globals';
 })
 export class GuideComponent implements OnInit {
 
-  constructor(private globals: Globals) {
+  constructor(public globals: Globals) {
   }
 
   pdfHebSrc: string = '/assets/pdfs/' + this.globals.languageSelected + '/EverHotGuide.pdf';

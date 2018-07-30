@@ -16,6 +16,9 @@ export class MyNavComponent implements OnInit {
       map(result => result.matches)
     );
    displayimage = true;
+   galleryName = "";//globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'";
+   guideName = "";
+   contactName = "";
 
 
   constructor(private breakpointObserver: BreakpointObserver, public globals: Globals) {

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -11,13 +12,18 @@ export class ContactComponent implements OnInit {
 
   form: FormGroup;
   messages: Message[] = [];
-  constructor(private fb: FormBuilder, private db: AngularFireDatabase) {
+  constructor(private fb: FormBuilder, private db: AngularFireDatabase, private httpPost: HttpClient) {
     this.createForm();
   }
 
   ngOnInit() {
   }
 
+  contact(params) {
+    return this.httpPost.post('https://us-central1-everhotbucket-e4287.cloudfunctions.net/contact', params).subscribe(function (data) {
+      return data;
+    });
+  }
   createForm() {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -36,6 +42,7 @@ export class ContactComponent implements OnInit {
       <div>Message: ${message}</div>
     `;
     let formRequest = {name, email, message, date, html};
+    this.contact(formRequest);
     this.db.list('/messages').push({ formRequest });
     this.form.reset();
   }

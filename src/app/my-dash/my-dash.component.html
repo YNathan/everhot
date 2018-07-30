@@ -1,10 +1,19 @@
-<div  class="hero-image">
+<div
+  [ngStyle]="{'background-image':'url(' + url + ')','height':'50%','background-position':'center','background-repeat':'no-repeat','background-size':'cover','position':'relative'}">
+  <br>
+  <div class="hero-youtube">
+    <iframe width="336" height="189" src="https://www.youtube.com/embed/ua6v5f5-wzU" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
   <div class="hero-text">
+
     <h1>Everhot</h1>
-    <button routerLink="/contact" >Contact</button>
+    <button routerLink="/gallery">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</button>
+    <button routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</button>
+    <button routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</button>
   </div>
 </div>
-<div class="container">
+<div class="conn">
   <div class="row">
     <img
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/easyinstall.png' : '/assets/images/english/easyinstall.png'"
@@ -35,3 +44,16 @@
   </div>
 </div>
 
+
+<!--div id="conn">
+  <div class="hero-text">
+    <h1>Everhot</h1>
+    <button routerLink="/gallery">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</button>
+    <button routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</button>
+    <button routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</button>
+  </div>
+  <img src='/assets/main1.jpg'>
+  <img src='/assets/main2.jpg'>
+  <img src='/assets/main3.jpg'>
+  <img src='/assets/PANEL.png'>
+</div-->

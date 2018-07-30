@@ -1,8 +1,9 @@
 <div [ngStyle]="{'background-color': 'grey'}">
 
-  <pdf-viewer [src]="pdfHebSrc"
+  <pdf-viewer [src]="globals.languageSelected == 'hebrew' ? '/assets/pdfs/hebrew/EverHotGuide.pdf' : '/assets/pdfs/english/EverHotGuide.pdf'"
               [render-text]="true"
-              style="display: block;">
+              style="display: block;"
+              [original-size]="true">
   </pdf-viewer>
 
 </div>

@@ -74,8 +74,9 @@ button.punch {
   padding: 10px 0 12px 0;
   text-align: center;
   text-shadow: 0 -1px 1px #1e2d4d;
-  width: 150px;
+  width: 200px;
   -webkit-background-clip: padding-box;
+  margin-left: 5%;
 }
 
 button.punch:hover {
@@ -84,4 +85,27 @@ button.punch:hover {
   cursor: pointer;
 }
 
+/*testpalce-*/
+* {
+  box-sizing: border-box;
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
+}
 
+body {
+  background: linear-gradient(65deg, #000, #000 20%, #639);
+  display: grid;
+  width: 100vw;
+  padding-top: 20px;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  body {
+    align-content: center;
+    padding: 20px;
+  }
+}
+button + button {
+  margin-left: 10%;
+}

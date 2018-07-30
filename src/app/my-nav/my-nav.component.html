@@ -7,11 +7,11 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [ngStyle]="{'z-index': '2'}"
     >
-    <mat-toolbar [ngStyle]="{'background-color': '#a2b9bc'}">תפריט</mat-toolbar>
+    <mat-toolbar [ngStyle]="{'background-color': '#a2b9bc'}">{{globals.languageSelected == 'hebrew' ? 'תפריט' : 'menu'}}</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/gallery" routerLinkActive="active">גלריה</a>
-      <a mat-list-item  routerLink="/guide" routerLinkActive="active">חוברת הדרכה</a>
-     <a mat-list-item routerLink="/contact" routerLinkActive="active">צור קשר</a>
+      <a mat-list-item routerLink="/gallery" routerLinkActive="active">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</a>
+      <a mat-list-item  routerLink="/guide" routerLinkActive="active">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a>
+     <a mat-list-item routerLink="/contact" routerLinkActive="active">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</a>
       <router-outlet></router-outlet>
     </mat-nav-list>
   </mat-sidenav>

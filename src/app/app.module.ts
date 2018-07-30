@@ -17,6 +17,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {environment} from '../environments/environment';
 import {GalleryComponent} from './gallery/gallery.component';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import {
   MatGridListModule,
   MatCardModule,
@@ -31,6 +32,18 @@ import {
 import {ListUploadComponent} from './upload/list-upload/list-upload.component';
 import {FormUploadComponent} from './upload/form-upload/form-upload.component';
 import {DetailsUploadComponent} from './upload/details-upload/details-upload.component';
+// ********************** angular-modal-gallery *****************************
+import 'hammerjs'; // <------ mandatory dependency for angular-modal-gallery
+import 'mousetrap'; // <------ mandatory dependency for angular-modal-gallery
+import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------- angular-modal-gallery library import
+// **************************************************************************
+
+// ************************ optional font-awesome 5 ************************
+// to install use both `npm i --save @fortawesome/fontawesome` and `npm i --save @fortawesome/fontawesome-free-solid`
+import { faExternalLinkAlt, faPlus, faTimes, faDownload } from '@fortawesome/fontawesome-free-solid';
+import * as fontawesome from '@fortawesome/fontawesome';
+fontawesome.library.add(faExternalLinkAlt, faPlus, faTimes, faDownload);
+// *************************************************************************
 
 const appRoutes: Routes = [
   {path: 'guide', component: GuideComponent},
@@ -56,6 +69,8 @@ const appRoutes: Routes = [
       appRoutes,
       {enableTracing: true} // <-- debugging purposes only
     ),
+    ModalGalleryModule.forRoot(), // <----------------- angular-modal-gallery module import
+    HttpClientModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for database

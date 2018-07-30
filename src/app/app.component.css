@@ -1,261 +1,47 @@
-.myApp{
-  background-color: #f2f2f2;
-}
-.grid-container {
-  margin: 20px;
-}
-
-.dashboard-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-}
-
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
-.dashboard-card-content {
-  text-align: center;
-}
 
 
-#myVideo{
-  right: 0;
-  left:0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+.body {
+
+  background: linear-gradient(270deg, #20ddae, #596f72);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
 }
 
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
-
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-
-
-.container .row {
-  margin: 20px;
-  text-align: center;
-}
-
-.container .row img {
-  margin: 0 20px;
-}
-
-
-/* =================================
-  Base Element Styles
-==================================== */
-
-* {
-  box-sizing: border-box;
-}
-body {
-  font: 1em/1.5 'Open Sans', sans-serif;
-  color: #373737;
-  background: #eaeaea;
-  margin: 0;
-}
-a {
-  text-decoration: none;
-}
-h1,
-h2,
-h3 {
-  text-transform: uppercase;
-}
-h2 {
-  font-size: 1.125em;
-  color: #4a89ca;
-  font-weight: 600;
-  margin: 0;
-}
-h3 {
-  font-size: 1.3em;
-  line-height: 1.25em;
-  margin-top: .85em;
-  margin-bottom: .5em;
-}
-p {
-  font-size: .875em;
-  line-height: 1.4;
-  margin: 0 0 1.5em;
-}
-
-/* =================================
-  Base Layout Styles
-==================================== */
-
-/* ---- Layout Containers ---- */
-
-.container,
-.content {
-  margin: auto;
-}
-.container {
-  width: 94.02985075%;
-  max-width: 1260px;
-  padding: 0 2.25em 4em;
-  background: #fff;
-}
-.main-header {
-  text-align: center;
-  padding: 2.8em 0 3.8em;
-}
-.cube-container {
-  max-width: 200px;
-  text-align: center;
-  margin: 0 auto 4.5em;
-}
-/* ---- Page Elements ---- */
-
-.name {
-  font-size: 1.65em;
-  font-weight: 800;
-  margin: 0 0 1.5em;
-  line-height: 1;
-}
-.name span {
-  font-weight: 300;
-  margin-left: -7px;
-}
-.logo {
-  width: 45px;
-  margin-bottom: .4em;
-  cursor: pointer;
-}
-.button {
-  font-size: .8em;
-  color: #fff;
-  width: 90%;
-  line-height: 1.15;
-  font-weight: 700;
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: .95em 0;
-  border-radius: .5em;
-  background: rgba(74,137,202, .8);
-  margin: auto;
-}
-/* ---- Photo Overlay ---- */
-
-.photo-desc {
-  font-size: .85em;
-  color: #fff;
-  padding: 1.1em 1em 0;
-  background: #345d88;
-}
-/* ---- Float clearfix ---- */
-
-.clearfix::after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-
-/* =================================
-  Media Queries
-==================================== */
-
-@media (min-width: 769px) {
-  .cube-container {
-
-    margin-left: 16.6%;
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
   }
-}
-@media (min-width: 1025px) {
-  .cube-container:first-child {
-    margin-left: 0;
+  50% {
+    background-position: 100% 50%
   }
-  .cube-container:last-child{
-    float: right;
-  }
-  .content {
-    max-width: 900px;
-    margin: auto;
+  100% {
+    background-position: 0% 50%
   }
 }
 
-/* =================================
-  Button Transitions
-==================================== */
-
-.button {
-  transition: background .3s;
-}
-.button:hover {
-  background: rgba(74,137,202, 1);
-}
-
-/* =================================
-  Photo 3D Transforms & Transitions
-==================================== */
-
-.cube-container {
-  box-shadow: 0 18px 40px 5px rgba(0,0,0,.4);
-  perspective: 800px;
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
 }
 
-.photo-cube {
-  transition: transform 2s ease-in-out;
-  width: 220px;
-  height: 200px;
-  transform-style: preserve-3d;
-}
-
-.photo-cube:hover {
-  transform: rotateY(-270deg);
-}
-
-.front,
-.back,
-.left,
-.right {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-}
-
-.front {
-  transform: translate3d(0,0,110px);
-}
-
-.back {
-  transform: translateZ(-110px) rotateY(270deg);
-  transform-origin: center left;
-}
-
-.left {
-  transform: rotateY(-270deg) translate3d(110px, 0, 0);
-  transform-origin: top right;
-}
-
-.right {
-  transform: translateZ(-110px) rotateY(180deg);
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
 }

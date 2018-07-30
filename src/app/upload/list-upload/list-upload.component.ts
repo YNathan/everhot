@@ -1,6 +1,27 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {map} from 'rxjs/operators';
 import {UploadFileService} from '../upload-file.service';
+import {
+  AccessibilityConfig,
+  Action,
+  AdvancedLayout,
+  ButtonEvent,
+  ButtonsConfig,
+  ButtonsStrategy,
+  ButtonType,
+  Description,
+  DescriptionStrategy,
+  GalleryService,
+  DotsConfig,
+  GridLayout,
+  Image,
+  ImageModalEvent,
+  LineLayout,
+  PlainGalleryConfig,
+  PlainGalleryStrategy,
+  PreviewConfig
+} from 'angular-modal-gallery';
+
 
 @Component({
   selector: 'list-upload',
@@ -14,18 +35,20 @@ export class ListUploadComponent implements OnInit {
   selectedArea = null;
   selectedAlbum = [];
 
+  plainGalleryGrid: PlainGalleryConfig = {
+    strategy: PlainGalleryStrategy.GRID,
+    layout: new GridLayout({ width: '350px', height: '350px' }, { length: 3, wrap: true })
+  };
   constructor(private uploadService: UploadFileService) {
   }
 
-
   ngOnInit() {
     // Use snapshotChanges().pipe(map()) to store the key
-    this.uploadService.getFileUploads(6).snapshotChanges().pipe(
+    this.uploadService.getFileUploads(1000).snapshotChanges().pipe(
       map(changes =>
         changes.map(c => ({key: c.payload.key, ...c.payload.val()}))
       )
     ).subscribe(fileUploads => {
-
         for (let i in fileUploads) {
           let areaName = fileUploads[i].name.split('.')[0].slice(0, -4);
           if (!this.areas.includes(areaName)) {
@@ -62,11 +85,17 @@ export class ListUploadComponent implements OnInit {
     }
   }
 
+  selectedKsImages = [];
+
   setSelectedArea(area: any) {
     this.selectedArea = area;
     for (let i in this.albums) {
-      if (this.albums[i].areaName == area) {
+      if (this.albums[i].areaName === area) {
         this.selectedAlbum = this.albums[i].photos;
+        this.selectedKsImages = [];
+        for (let ksi in this.albums[i].photos) {
+          this.selectedKsImages.push(new Image( parseInt(ksi), {img: this.albums[i].photos[ksi].url}));
+        }
       }
     }
   }
