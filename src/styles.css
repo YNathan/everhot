@@ -5,14 +5,21 @@ body, html {
 }
 
 body {
-  background: linear-gradient(270deg, #a2b9bc, #cbe0e3);
+  background: linear-gradient(270deg, #a2b9bc, #6ab3bd);
   background-size: 400% 400%;
 
   -webkit-animation: AnimationName 30s ease infinite;
   -moz-animation: AnimationName 30s ease infinite;
   animation: AnimationName 30s ease infinite;
 }
+.toolbar{
+  background: linear-gradient(270deg, #a2b9bc, #6ab3bd);
+  background-size: 400% 400%;
 
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 0% 50%

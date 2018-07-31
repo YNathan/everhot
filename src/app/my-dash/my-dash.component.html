@@ -1,46 +1,42 @@
 <div
   [ngStyle]="{'background-image':'url(' + url + ')','height':'50%','background-position':'center','background-repeat':'no-repeat','background-size':'cover','position':'relative'}">
   <br>
-  <div class="hero-youtube">
-    <iframe width="336" height="189" src="https://www.youtube.com/embed/ua6v5f5-wzU" frameborder="0"
-            allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
   <div class="hero-text">
 
     <h1>Everhot</h1>
-    <button routerLink="/gallery">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</button>
-    <button routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</button>
     <button routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</button>
+    <button routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</button>
+    <button routerLink="/gallery">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</button>
   </div>
 </div>
 <div class="conn">
   <div class="row">
     <img
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/easyinstall.png' : '/assets/images/english/easyinstall.png'"
-      alt="" width="164">
+      alt="" width="220">
     <img
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/money.png' : '/assets/images/english/money.png'"
-      alt="" width="164">
+      alt="" width="220">
   </div>
   <div class="row">
     <img
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/alerting.png' : '/assets/images/english/alerting.png'"
-      src="/assets/images/english/alerting.png" alt="" width="164">
-    <img src="/assets/PANEL.png" alt="" width="264">
+      alt="" width="220">
+    <img src="/assets/PANEL.png" alt="" width="420">
     <img
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/madeinisrael.png' : '/assets/images/english/madeinisrael.png'"
-      src="/assets/images/english/madeinisrael.png" alt="" width="164">
+      src="/assets/images/english/madeinisrael.png" alt="" width="220">
   </div>
   <div class="row">
-    <img
-      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/integrated.png' : '/assets/images/english/integrated.png'"
-      alt="" width="164">
+    <img class="sun"
+         [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/integrated.png' : '/assets/images/english/integrated.png'"
+         alt="" width="220">
     <img
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/shabbat.png' : '/assets/images/english/shabbat.png'"
-      alt="" width="164">
+      alt="" width="220">
     <img
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/avnit.png' : '/assets/images/english/avnit.png'"
-      alt="" width="164">
+      alt="" width="220">
   </div>
 </div>
 
@@ -57,3 +53,7 @@
   <img src='/assets/main3.jpg'>
   <img src='/assets/PANEL.png'>
 </div-->
+<div class="conn">
+    <iframe width="94.02985075%" height="450px" src="https://www.youtube.com/embed/ua6v5f5-wzU" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>

@@ -109,3 +109,12 @@ body {
 button + button {
   margin-left: 10%;
 }
+.dady{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+.child{
+  justify-content: center;
+  display: flex;
+}
