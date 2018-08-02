@@ -1,2 +1,17 @@
-  <list-upload></list-upload>
+<ul class="topnav">
+  <li><a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}"/></a></li>
+  <li class="right"><a>
+    <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה"
+                [ngStyle]="{'margin-left':'35px','margin-right':'35px','max-width':'100px'}">
+      <mat-option *ngFor="let lng of globals.languages" [value]="lng.value">
+        {{lng.viewValue }}
+      </mat-option>
+    </mat-select>
+  </a>
+  </li>
+  <li class="right"><a routerLink="/gallery">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</a></li>
+  <li class="right"><a routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a></li>
+  <li class="right"><a routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</a></li>
+</ul>
+<list-upload></list-upload>
 

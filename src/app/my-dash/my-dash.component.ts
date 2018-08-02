@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, Directive, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren} from '@angular/core';
 import {Globals} from '../globals';
+import {ModalService} from '../modal.service';
 
 @Component({
   selector: 'my-dash',
@@ -10,7 +11,7 @@ export class MyDashComponent implements OnInit, AfterViewInit {
 
   @ViewChildren('heroimage') divs: ElementRef;
 
-  constructor(public globals: Globals, private el: ElementRef, private renderer: Renderer2) {
+  constructor(public globals: Globals, private el: ElementRef, private renderer: Renderer2, private modal: ModalService) {
   }
 
   url: any;
@@ -27,7 +28,7 @@ export class MyDashComponent implements OnInit, AfterViewInit {
       '/assets/PANEL.png',
     ];
     setInterval(function () {
-        this.url = images[i];
+      this.url = images[i];
       i = i + 1;
       if (i === images.length) {
         i = 0;
@@ -38,4 +39,7 @@ export class MyDashComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
   }
 
+  openModal(str: any) {
+   // this.modal.open(str);
+  }
 }

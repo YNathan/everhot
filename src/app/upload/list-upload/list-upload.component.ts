@@ -21,6 +21,7 @@ import {
   PlainGalleryStrategy,
   PreviewConfig
 } from 'angular-modal-gallery';
+import {Globals} from '../../globals';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class ListUploadComponent implements OnInit {
     strategy: PlainGalleryStrategy.GRID,
     layout: new GridLayout({ width: '350px', height: '350px' }, { length: 3, wrap: true })
   };
-  constructor(private uploadService: UploadFileService) {
+  constructor(private uploadService: UploadFileService, public golbals: Globals) {
   }
 
   ngOnInit() {

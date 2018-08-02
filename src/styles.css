@@ -5,53 +5,59 @@ body, html {
 }
 
 body {
-  background: linear-gradient(270deg, #a2b9bc, #6ab3bd);
+  background: linear-gradient(270deg, #b7e5f0, #bde5ee);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+
+}
+
+.toolbar {
+  background: linear-gradient(270deg, #a2b9bc, #a2b9bc);
   background-size: 400% 400%;
 
   -webkit-animation: AnimationName 30s ease infinite;
   -moz-animation: AnimationName 30s ease infinite;
   animation: AnimationName 30s ease infinite;
 }
-.toolbar{
-  background: linear-gradient(270deg, #a2b9bc, #6ab3bd);
-  background-size: 400% 400%;
 
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
-}
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
 }
 
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
+
+
+ul.topnav li {
+  float: left;
 }
 
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
+ul.topnav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+ul.topnav li.right:hover {
+  background-color: white;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {
+    float: none;
   }
 }

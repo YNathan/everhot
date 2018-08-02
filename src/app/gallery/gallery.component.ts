@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
+import {Globals} from '../globals';
 
 @Component({
   selector: 'app-gallery',
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public globals: Globals) { }
 
   ngOnInit(): void {
   }

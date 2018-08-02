@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {HttpClient} from '@angular/common/http';
+import {Globals} from '../globals';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +13,7 @@ export class ContactComponent implements OnInit {
 
   form: FormGroup;
   messages: Message[] = [];
-  constructor(private fb: FormBuilder, private db: AngularFireDatabase, private httpPost: HttpClient) {
+  constructor(private fb: FormBuilder, private db: AngularFireDatabase, private httpPost: HttpClient, private globals: Globals) {
     this.createForm();
   }
 
