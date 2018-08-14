@@ -13,8 +13,11 @@
   <li class="right"><a routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a></li>
   <li class="right"><a routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</a></li>
 </ul>
-<div [ngStyle]="{'background-color': 'grey'}">
+<div >
 
+
+  <!--ej-pdfviewer [(serviceUrl)]="service" id="pdfviewer1" style="width:100%;min-height:600px;display:block" >
+  </ej-pdfviewer-->
   <pdf-viewer [src]="globals.languageSelected == 'hebrew' ? '/assets/pdfs/hebrew/EverHotGuide.pdf' : '/assets/pdfs/english/EverHotGuide.pdf'"
               [render-text]="true"
               style="display: block;"

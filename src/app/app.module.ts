@@ -1,3 +1,4 @@
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -27,15 +28,16 @@ import {
   MatToolbarModule,
   MatSidenavModule,
   MatListModule,
-  MatSelectModule
+  MatSelectModule, MatAccordion, MatNativeDateModule, MatAccordionDisplayMode, MatInputModule
 } from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {ListUploadComponent} from './upload/list-upload/list-upload.component';
 import {FormUploadComponent} from './upload/form-upload/form-upload.component';
 import {DetailsUploadComponent} from './upload/details-upload/details-upload.component';
 // ********************** angular-modal-gallery *****************************
 import 'hammerjs'; // <------ mandatory dependency for angular-modal-gallery
 import 'mousetrap'; // <------ mandatory dependency for angular-modal-gallery
-import {ModalGalleryModule} from 'angular-modal-gallery'; // <----------------- angular-modal-gallery library import
+import {ModalGalleryModule} from '@ks89/angular-modal-gallery'; // <----------------- angular-modal-gallery library import
 // **************************************************************************
 
 // ************************ optional font-awesome 5 ************************
@@ -88,15 +90,23 @@ const appRoutes: Routes = [
       appRoutes,
       {enableTracing: true} // <-- debugging purposes only
     ),
+    MDBBootstrapModule.forRoot(),
     ModalGalleryModule.forRoot(), // <----------------- angular-modal-gallery module import
     HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    MatNativeDateModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for database
     Angular2ImageGalleryModule,
     PdfViewerModule,
+    MatExpansionModule,
     MatSelectModule,
     BrowserModule,
+    MatInputModule,
     BrowserAnimationsModule,
     MatGridListModule,
     MatCardModule,

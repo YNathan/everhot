@@ -1,14 +1,29 @@
-<script src="../upload-file.service.ts"></script>
-<ul>
-  <li *ngFor="let area of areas">
-    <button class="punch" (click)="setSelectedArea(area)">{{area}}</button>
-  </li>
-</ul>
+<script src="../upload-file.service.ts" xmlns=""></script>
 
-<div class="dady" *ngIf="selectedArea != null">
+<div class="dady">
   <div class="child">
-    <ks-modal-gallery [modalImages]="selectedKsImages" [plainGalleryConfig]="plainGalleryGrid"></ks-modal-gallery>
+    <mat-accordion class="matAccor" [style.width.px]="accWidth">
+      <div *ngFor="let area of areas" [style.width.px]="accWidth">
+        <mat-expansion-panel (click)="setSelectedArea(area)">
+          <mat-expansion-panel-header class="panelAccordion">
+            <mat-panel-title>
+              {{area}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <!--div class="testImgs" *ngFor="let img of selectedKsImages">
+            <img src={{img.modal.img}}>
+          </div-->
+          <div>
+
+            <ks-modal-gallery [id]="0" [modalImages]="selectedKsImages"
+                              [plainGalleryConfig]="plainGalleryGrid"></ks-modal-gallery>
+
+
+          </div>
+        </mat-expansion-panel>
+      </div>
+
+    </mat-accordion>
+
   </div>
 </div>
-
-

@@ -20,7 +20,7 @@ import {
   PlainGalleryConfig,
   PlainGalleryStrategy,
   PreviewConfig
-} from 'angular-modal-gallery';
+} from '@ks89/angular-modal-gallery';
 import {Globals} from '../../globals';
 
 
@@ -35,12 +35,33 @@ export class ListUploadComponent implements OnInit {
   areas = [];
   selectedArea = null;
   selectedAlbum = [];
+  panelOpenState = false;
+  mobHeight: any;
+  mobWidth: any;
+  accWidth = window.screen.width / 1.1;
 
-  plainGalleryGrid: PlainGalleryConfig = {
-    strategy: PlainGalleryStrategy.GRID,
-    layout: new GridLayout({ width: '350px', height: '350px' }, { length: 3, wrap: true })
-  };
+  /*
+   h: 720px
+   w: 1280px
+
+   h: 640px
+   w: 360px
+   */
+  plainGalleryGrid: PlainGalleryConfig;
+
   constructor(private uploadService: UploadFileService, public golbals: Globals) {
+    if (window.screen.width > 700) {
+      this.plainGalleryGrid = {
+        strategy: PlainGalleryStrategy.GRID,
+        layout: new GridLayout({width: window.screen.width / 3.4 + 'px', height: window.screen.width / 3.4 + 'px'}, {length: 3, wrap: true})
+      };
+    } else {
+      this.accWidth = window.screen.width / 1.2;
+      this.plainGalleryGrid = {
+        strategy: PlainGalleryStrategy.GRID,
+        layout: new GridLayout({width: window.screen.width / 1.7 + 'px', height: window.screen.width / 1.7 + 'px'}, {length: 1, wrap: true})
+      };
+    }
   }
 
   ngOnInit() {
@@ -95,7 +116,7 @@ export class ListUploadComponent implements OnInit {
         this.selectedAlbum = this.albums[i].photos;
         this.selectedKsImages = [];
         for (let ksi in this.albums[i].photos) {
-          this.selectedKsImages.push(new Image( parseInt(ksi), {img: this.albums[i].photos[ksi].url}));
+          this.selectedKsImages.push(new Image(parseInt(ksi), {img: this.albums[i].photos[ksi].url}));
         }
       }
     }

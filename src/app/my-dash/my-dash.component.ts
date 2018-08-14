@@ -1,4 +1,15 @@
-import {AfterViewInit, Component, Directive, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Directive,
+  ElementRef,
+  HostListener,
+  OnInit,
+  QueryList,
+  Renderer2,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 import {Globals} from '../globals';
 import {ModalService} from '../modal.service';
 
@@ -9,9 +20,28 @@ import {ModalService} from '../modal.service';
 })
 export class MyDashComponent implements OnInit, AfterViewInit {
 
+  waterWidth: any;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+   if (window.screen.width > 1200) {
+      this.waterWidth = 130;
+    } else {
+      this.waterWidth = 100;
+    }
+    document.getElementById("blbl").style.width = '100%';
+   // this.waterWidth = window.screen.width;
+  }
+
   @ViewChildren('heroimage') divs: ElementRef;
 
   constructor(public globals: Globals, private el: ElementRef, private renderer: Renderer2, private modal: ModalService) {
+   /* if (window.screen.width > 1200) {
+      this.waterWidth = 130;
+    } else {
+      this.waterWidth = 100;
+    }*/
+   // this.waterWidth = window.screen.width;
   }
 
   url: any;
@@ -20,26 +50,14 @@ export class MyDashComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.url = '/assets/main1.jpg';
-    let i = 0;
-    const images = [
-      '/assets/main1.jpg',
-      '/assets/main2.jpg',
-      '/assets/main3.jpg',
-      '/assets/PANEL.png',
-    ];
-    setInterval(function () {
-      this.url = images[i];
-      i = i + 1;
-      if (i === images.length) {
-        i = 0;
-      }
-    }, 1000);
+    document.getElementById("blbl").style.width = '100%';
   }
 
   ngAfterViewInit() {
+    document.getElementById("blbl").style.width = '100%';
   }
 
   openModal(str: any) {
-   // this.modal.open(str);
+    // this.modal.open(str);
   }
 }
