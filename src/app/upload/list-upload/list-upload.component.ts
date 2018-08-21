@@ -71,17 +71,33 @@ export class ListUploadComponent implements OnInit {
         changes.map(c => ({key: c.payload.key, ...c.payload.val()}))
       )
     ).subscribe(fileUploads => {
-        for (let i in fileUploads) {
-          let areaName = fileUploads[i].name.split('.')[0].slice(0, -4);
+        for (const i in fileUploads) {
+          const arr = fileUploads[i].name.split(' ');
+          let areaName = '';
+          for (let idx = 0; idx < arr.length - 1; idx++) {
+            areaName += arr[idx];
+            if (idx !== arr.length - 2) {
+              areaName += ' ';
+            }
+          }
           if (!this.areas.includes(areaName)) {
             this.areas.push(areaName);
           }
         }
-        for (let areaIdx in this.areas) {
-          let album = {'areaName': this.areas[areaIdx], 'photos': []};
-          for (let fileIdx in fileUploads) {
-            let areaName = fileUploads[fileIdx].name.split('.')[0].slice(0, -4);
-            if (areaName == this.areas[areaIdx]) {
+        for (const areaIdx in this.areas) {
+          const album = {'areaName': this.areas[areaIdx], 'photos': []};
+          for (const fileIdx in fileUploads) {
+
+            const arr = fileUploads[fileIdx].name.split(' ');
+            let areaName = '';
+            for (let idx = 0; idx < arr.length - 1; idx++) {
+              areaName += arr[idx];
+              if (idx !== arr.length - 2) {
+                areaName += ' ';
+              }
+            }
+
+            if (areaName === this.areas[areaIdx]) {
               album.photos.push(fileUploads[fileIdx]);
             }
           }
@@ -101,7 +117,7 @@ export class ListUploadComponent implements OnInit {
 
 
   navigate(forward) {
-    var index = this.selectedPhotosArray.indexOf(this.selectedImage) + (forward ? 1 : -1);
+    const index = this.selectedPhotosArray.indexOf(this.selectedImage) + (forward ? 1 : -1);
     if (index >= 0 && index < this.selectedPhotosArray.length) {
       this.selectedImage = this.selectedPhotosArray[index];
     }
@@ -111,11 +127,11 @@ export class ListUploadComponent implements OnInit {
 
   setSelectedArea(area: any) {
     this.selectedArea = area;
-    for (let i in this.albums) {
+    for (const i in this.albums) {
       if (this.albums[i].areaName === area) {
         this.selectedAlbum = this.albums[i].photos;
         this.selectedKsImages = [];
-        for (let ksi in this.albums[i].photos) {
+        for (const ksi in this.albums[i].photos) {
           this.selectedKsImages.push(new Image(parseInt(ksi), {img: this.albums[i].photos[ksi].url}));
         }
       }

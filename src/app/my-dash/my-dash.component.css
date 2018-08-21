@@ -456,7 +456,7 @@ button + button {
 
 .container {
   z-index: 1;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   display: flex;
   align-items: center;

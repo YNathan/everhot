@@ -1,4 +1,7 @@
-<div [ngStyle]="{'background-image':'url(' + url + ')','height':'50%','width':'100%','background-position':'center','background-size':'cover','position':'relative','z-index': '0'}">
+<div
+  [ngStyle]="{'background-image':'url(' + url + ')','height':'50%','width':'100%','background-position':'center','background-size':'cover','position':'relative','z-index': '0'}">
+ 
+  <div [ngStyle]="{'position':'fixed'}">
   <div class="bird-container bird-container--one">
     <div class="bird bird--one"></div>
   </div>
@@ -14,9 +17,14 @@
   <div class="bird-container bird-container--four">
     <div class="bird bird--four"></div>
   </div>
+</div>
+
 
   <ul class="topnav">
     <li><a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}"/></a>
+    </li>
+    <li class="right">
+      <img data="/assets/language.png" width="48px" height="48px">
     </li>
     <li class="right"><a>
       <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה"
@@ -33,7 +41,7 @@
   </ul>
 
   <div class="hero-buttons">
-    <img [src]="'/assets/images/WaterFliped.png'"  id="blbl"  height="150px">
+    <img [src]="'/assets/images/WaterFliped.png'" id="blbl" height="150px">
   </div>
 </div>
 
@@ -55,15 +63,16 @@
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/alerting.png' : '/assets/images/english/alerting.png'"
       alt="" width="220">
 
-      <img src="/assets/PANEL.png" alt="" width="420">
+    <img src="/assets/PANEL.png" alt="" width="420">
 
-    <img data-target="#exampleModal"  data-toggle="modal"
-      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/madeinisrael.png' : '/assets/images/english/madeinisrael.png'"
-      src="/assets/images/english/madeinisrael.png" alt="" width="220">
+    <img data-target="#exampleModal" data-toggle="modal"
+         [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/madeinisrael.png' : '/assets/images/english/madeinisrael.png'"
+         src="/assets/images/english/madeinisrael.png" alt="" width="220">
   </div>
   <div class="rowSun">
-    <img [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/integrated.png' : '/assets/images/english/integrated.png'"
-         alt="" width="220">
+    <img
+      [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/integrated.png' : '/assets/images/english/integrated.png'"
+      alt="" width="220">
     <img
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/shabbat.png' : '/assets/images/english/shabbat.png'"
       alt="" width="220">
@@ -72,7 +81,6 @@
       alt="" width="220">
   </div>
 </div>
-
 
 
 <div class="conn">
