@@ -1,9 +1,11 @@
 <ul class="topnav">
-  <li><a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}"/></a></li>
+  <li>
+    <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}"/></a>
+  </li>
   <li class="right"><a>
     <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה"
-                [ngStyle]="{'margin-left':'35px','margin-right':'35px','max-width':'100px'}">
-      <mat-option *ngFor="let lng of globals.languages" [value]="lng.value">
+                [ngStyle]="{'max-width':'50px','border-radius':'10%'}">
+      <mat-option *ngFor="let lng of globals.languages" [value]="lng.value"  [ngStyle]="{'border-radius':'10%'}">
         {{lng.viewValue }}
       </mat-option>
     </mat-select>
@@ -13,15 +15,24 @@
   <li class="right"><a routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a></li>
   <li class="right"><a routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</a></li>
 </ul>
-<div >
+
 
 
   <!--ej-pdfviewer [(serviceUrl)]="service" id="pdfviewer1" style="width:100%;min-height:600px;display:block" >
   </ej-pdfviewer-->
+  <div [ngStyle]="{'height': '700px', 'overflow': 'scroll'}">
   <pdf-viewer [src]="globals.languageSelected == 'hebrew' ? '/assets/pdfs/hebrew/EverHotGuide.pdf' : '/assets/pdfs/english/EverHotGuide.pdf'"
               [render-text]="true"
-              style="display: block;"
-              [original-size]="true">
-  </pdf-viewer>
+           
+              [zoom]="0.5">
 
+  </pdf-viewer>
 </div>
+
+  
+
+
+
+
+
+

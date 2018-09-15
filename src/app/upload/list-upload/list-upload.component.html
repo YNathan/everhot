@@ -4,21 +4,18 @@
   <div class="child">
     <mat-accordion class="matAccor" [style.width.px]="accWidth">
       <div *ngFor="let area of areas" [style.width.px]="accWidth">
-        <mat-expansion-panel (click)="setSelectedArea(area)">
+        <mat-expansion-panel (click)="setSelectedArea(area)" [ngStyle]="{'border-radius':'10%'}">
           <mat-expansion-panel-header class="panelAccordion">
             <mat-panel-title>
-              {{area}}
+              <div class="dady">
+                <div class="child">
+                  {{area}}
+                </div>
+              </div>
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <!--div class="testImgs" *ngFor="let img of selectedKsImages">
-            <img src={{img.modal.img}}>
-          </div-->
           <div>
-
-            <ks-modal-gallery [id]="0" [modalImages]="selectedKsImages"
-                              [plainGalleryConfig]="plainGalleryGrid"></ks-modal-gallery>
-
-
+            <ks-modal-gallery [id]="0" [modalImages]="selectedKsImages" [plainGalleryConfig]="plainGalleryGrid"></ks-modal-gallery>
           </div>
         </mat-expansion-panel>
       </div>

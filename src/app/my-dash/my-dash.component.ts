@@ -1,18 +1,12 @@
 import {
   AfterViewInit,
   Component,
-  Directive,
-  ElementRef,
   HostListener,
   OnInit,
-  QueryList,
-  Renderer2,
-  ViewChild,
-  ViewChildren
 } from '@angular/core';
-import {Globals} from '../globals';
-import {ModalService} from '../modal.service';
-
+import { Globals } from '../globals';
+import {MatDialog} from '@angular/material';
+import { DialogComponent } from '../dialog/dialog.component';
 @Component({
   selector: 'my-dash',
   templateUrl: './my-dash.component.html',
@@ -24,26 +18,19 @@ export class MyDashComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-   if (window.screen.width > 1200) {
+    if (window.screen.width > 1200) {
       this.waterWidth = 130;
     } else {
       this.waterWidth = 100;
     }
-    document.getElementById("blbl").style.width = '100%';
-   // this.waterWidth = window.screen.width;
   }
 
-  @ViewChildren('heroimage') divs: ElementRef;
 
-  constructor(public globals: Globals, private el: ElementRef, private renderer: Renderer2, private modal: ModalService) {
-   /* if (window.screen.width > 1200) {
-      this.waterWidth = 130;
-    } else {
-      this.waterWidth = 100;
-    }*/
-   // this.waterWidth = window.screen.width;
+  constructor(public globals: Globals,public dialog: MatDialog) {
   }
 
+  animal: string;
+  name: string;
   url: any;
 
   imageHero: any;
@@ -57,7 +44,16 @@ export class MyDashComponent implements OnInit, AfterViewInit {
     document.getElementById("blbl").style.width = '100%';
   }
 
-  openModal(str: any) {
-    // this.modal.open(str);
+  openDialog(name): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: {name: name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
+
 }

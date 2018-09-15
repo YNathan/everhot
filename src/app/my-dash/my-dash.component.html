@@ -21,15 +21,13 @@
 
 
   <ul class="topnav">
-    <li><a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}"/></a>
-    </li>
-    <li class="right">
-      <img data="/assets/language.png" width="48px" height="48px">
+    <li>
+      <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}"/></a>
     </li>
     <li class="right"><a>
       <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה"
-                  [ngStyle]="{'margin-left':'35px','margin-right':'35px','max-width':'100px'}">
-        <mat-option *ngFor="let lng of globals.languages" [value]="lng.value">
+                  [ngStyle]="{'max-width':'50px','border-radius':'10%'}">
+        <mat-option *ngFor="let lng of globals.languages" [value]="lng.value"  [ngStyle]="{'border-radius':'10%'}">
           {{lng.viewValue }}
         </mat-option>
       </mat-select>
@@ -51,32 +49,32 @@
 <br>
 <div class="conn">
   <div class="rowSun">
-    <img (click)="openModal('easyInstall')"
+    <img (click)="openDialog('easyInstall')"
          [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/easyinstall.png' : '/assets/images/english/easyinstall.png'"
          alt="" width="220">
-    <img
+    <img (click)="openDialog('monay')"
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/money.png' : '/assets/images/english/money.png'"
       alt="" width="220">
   </div>
   <div class="rowSun">
-    <img
+    <img (click)="openDialog('alerting')"
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/alerting.png' : '/assets/images/english/alerting.png'"
       alt="" width="220">
 
     <img src="/assets/PANEL.png" alt="" width="420">
 
-    <img data-target="#exampleModal" data-toggle="modal"
+    <img (click)="openDialog('madeinisrael')" data-target="#exampleModal" data-toggle="modal"
          [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/madeinisrael.png' : '/assets/images/english/madeinisrael.png'"
          src="/assets/images/english/madeinisrael.png" alt="" width="220">
   </div>
   <div class="rowSun">
-    <img
+    <img (click)="openDialog('integrated')"
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/integrated.png' : '/assets/images/english/integrated.png'"
       alt="" width="220">
-    <img
+    <img (click)="openDialog('shabbat')"
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/shabbat.png' : '/assets/images/english/shabbat.png'"
       alt="" width="220">
-    <img
+    <img (click)="openDialog('avnit')"
       [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/avnit.png' : '/assets/images/english/avnit.png'"
       alt="" width="220">
   </div>
@@ -87,3 +85,23 @@
   <iframe width="94.02985075%" height="450px" src="https://www.youtube.com/embed/ua6v5f5-wzU" frameborder="0"
           allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
+
+
+<ol>
+  <li>
+    <mat-form-field>
+      <input matInput [(ngModel)]="name" placeholder="What's your name?">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog('bla')">Pick one</button>
+  </li>
+  <li *ngIf="animal">
+    You chose: <i>{{animal}}</i>
+  </li>
+</ol>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

@@ -125,12 +125,13 @@ button + button {
 .child {
   justify-content: center;
   display: flex;
-  width: 70%;
+  
 }
 
 .panelAccordion {
-  background-color: #4162a8;
-  font-size: 25px;
+  max-height: 30px;
+  background-color: #5b80ca;
+  font-size: 15px;
   color: white;
 }
 
