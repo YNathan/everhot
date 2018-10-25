@@ -11,7 +11,7 @@ import {Globals} from '../globals';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor(public globals: Globals) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
 
   form: FormGroup;
   messages: Message[] = [];
-  constructor(private fb: FormBuilder, private db: AngularFireDatabase, private httpPost: HttpClient, private globals: Globals) {
+  constructor(private fb: FormBuilder, private db: AngularFireDatabase, private httpPost: HttpClient) {
     this.createForm();
   }
 
