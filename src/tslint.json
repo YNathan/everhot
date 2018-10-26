@@ -1,6 +1,14 @@
 {
     "extends": "../tslint.json",
     "rules": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "settings": {
+            "app": {
+                ".read": true,
+                ".write": false
+            }
+        },
         "directive-selector": [
             true,
             "attribute",

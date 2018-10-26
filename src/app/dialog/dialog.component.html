@@ -1,12 +1,46 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<!--h1 mat-dialog-title>{{data.name}}</h1-->
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.animal">
-  </mat-form-field>
+
+  <div *ngIf="data.name == 'easyInstall'">
+    <img [src]="'/assets/images/ICON2.png'" alt="" width="110">
+    <div>
+      <p> </p>{{globals.languageSelected == 'hebrew' ? 'התקנה פשוטה' : 'easy to install'}}
+    </div>
+  </div>
+  <div *ngIf="data.name == 'monay'">
+    <img [src]="'/assets/images/ICON1.png'" alt="" width="110">
+    <div>
+      <p> </p>{{globals.languageSelected == 'hebrew' ? 'זול' : 'cheaper'}}
+    </div>
+  </div>
+  <div *ngIf="data.name == 'alerting'">
+    <img [src]="'/assets/images/ICON2.png'" alt="" width="110">
+    <div>
+      <p> </p>{{globals.languageSelected == 'hebrew' ? 'התקנה פשוטה' : 'easy to install'}}
+    </div>
+  </div>
+  <div *ngIf="data.name == 'integrated'">
+    <img [src]="'/assets/images/ICON2.png'" alt="" width="110">
+    <div>
+      <p> </p>{{globals.languageSelected == 'hebrew' ? 'התקנה פשוטה' : 'easy to install'}}
+    </div>
+  </div>
+  <div *ngIf="data.name == 'shabbat'">
+    <img [src]="'/assets/images/ICON2.png'" alt="" width="110">
+    <div>
+      <p> </p>{{globals.languageSelected == 'hebrew' ? 'התקנה פשוטה' : 'easy to install'}}
+    </div>
+  </div>
+  <div *ngIf="data.name == 'avnit'">
+      <img [src]="'/assets/images/ICON2.png'" alt="" width="110">
+      <div>
+        <p> </p>{{globals.languageSelected == 'hebrew' ? 'התקנה פשוטה' : 'easy to install'}}
+      </div>
+    </div>
+
+
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
   <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
 </div>
 

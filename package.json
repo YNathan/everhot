@@ -37,6 +37,7 @@
     "mousetrap": "^1.6.2",
     "ng2-pdf-viewer": "^5.1.0",
     "rxjs": "^6.0.0",
+    "simple-pdf-viewer": "^2.0.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

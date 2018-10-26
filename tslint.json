@@ -3,6 +3,14 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    "settings": {
+      "app": {
+        ".read": true,
+        ".write": false
+      }
+    },
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,

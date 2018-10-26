@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "redirects": [ {
+      "source" : "/dashboard",
+      "destination" : "/dashboard",
+      "type" : 301
+    } ],
+    "public": "dist/everhot",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -20,6 +20,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SimplePdfViewerModule } from 'simple-pdf-viewer';
 import {
   MatGridListModule,
   MatCardModule,
@@ -55,23 +56,7 @@ const appRoutes: Routes = [
   { path: 'gallery', component: GalleryComponent },
   { path: 'dashboard', component: MyDashComponent },
   { path: 'guide', component: GuideComponent },
-  {
-    path: 'contact',
-    redirectTo: '/contact',
-    pathMatch: 'full'
-  }, {
-    path: 'guide',
-    redirectTo: '/guide',
-    pathMatch: 'full'
-  }, {
-    path: 'gallery',
-    redirectTo: '/gallery',
-    pathMatch: 'full'
-  }, {
-    path: 'dashboard',
-    redirectTo: '/dashboard',
-    pathMatch: 'full'
-  },
+  { path: '**', component: MyDashComponent }
 ];
 
 
@@ -92,7 +77,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      {onSameUrlNavigation: 'reload', enableTracing: true } // <-- debugging purposes only
     ),
     MatDialogModule,
     MDBBootstrapModule.forRoot(),
@@ -122,7 +107,8 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-   ],
+    SimplePdfViewerModule
+  ],
   exports: [RouterModule],
   providers: [Globals],
   bootstrap: [AppComponent]

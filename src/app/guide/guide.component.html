@@ -1,15 +1,14 @@
 <ul class="topnav">
   <li>
-    <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}"/></a>
+    <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}" /></a>
   </li>
   <li class="right"><a>
-    <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה"
-                [ngStyle]="{'max-width':'50px','border-radius':'10%'}">
-      <mat-option *ngFor="let lng of globals.languages" [value]="lng.value"  [ngStyle]="{'border-radius':'10%'}">
-        {{lng.viewValue }}
-      </mat-option>
-    </mat-select>
-  </a>
+      <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה" [ngStyle]="{'max-width':'50px','border-radius':'10%'}">
+        <mat-option *ngFor="let lng of globals.languages" [value]="lng.value" [ngStyle]="{'border-radius':'10%'}">
+          {{lng.viewValue }}
+        </mat-option>
+      </mat-select>
+    </a>
   </li>
   <li class="right"><a routerLink="/gallery">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</a></li>
   <li class="right"><a routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a></li>
@@ -18,21 +17,36 @@
 
 
 
-  <!--ej-pdfviewer [(serviceUrl)]="service" id="pdfviewer1" style="width:100%;min-height:600px;display:block" >
+<!--ej-pdfviewer [(serviceUrl)]="service" id="pdfviewer1" style="width:100%;min-height:600px;display:block" >
   </ej-pdfviewer-->
-  <div [ngStyle]="{'height': '700px', 'overflow': 'scroll'}">
-  <pdf-viewer [src]="globals.languageSelected == 'hebrew' ? '/assets/pdfs/hebrew/EverHotGuide.pdf' : '/assets/pdfs/english/EverHotGuide.pdf'"
-              [render-text]="true"
-           
-              [zoom]="0.5">
-
-  </pdf-viewer>
+<div style="text-align: center">
+  <a (click)="pdfViewer.prevPage()"><img src="/assets/baseline-skip_previous-24px.svg" [ngStyle]="{'max-height':'55px'}" /></a>
+  <a (click)="pdfViewer.zoomIn()"><img src="/assets/baseline-zoom_in-24px.svg" [ngStyle]="{'max-height':'100px'}" /></a>
+  <a (click)="pdfViewer.zoomOut()"><img src="/assets/baseline-zoom_out-24px.svg" [ngStyle]="{'max-height':'55px'}" /></a>
+  <a (click)="pdfViewer.nextPage()"><img src="/assets/baseline-skip_next-24px.svg" [ngStyle]="{'max-height':'55px'}" /></a>
 </div>
 
-  
+<section id="viewer">
+  <!-- Simple PDF Viewer: open the test.pdf at the second page -->
+  <simple-pdf-viewer #pdfViewer [src]="globals.languageSelected == 'hebrew' ? '/assets/pdfs/hebrew/EverHotGuide.pdf' : '/assets/pdfs/english/EverHotGuide.pdf'"></simple-pdf-viewer>
+</section>
+
+<!-- Example actions -->
+<button (click)="pdfViewer.zoomIn()">Zoom In</button>
+<button (click)="pdfViewer.zoomOut()">Zoom out</button>
+<button (click)="pdfViewer.nextPage()">Next Page</button>
+<button (click)="pdfViewer.prevPage()">Prev Page</button>
+<!--button (click)="pdfViewer.turnLeft()">Turn the document left</button-->
+<!--button (click)="pdfViewer.search('PDF')">Search the world 'PDF'</button-->
 
 
 
 
+<!--div [ngStyle]="{'height': '700px', 'overflow': 'scroll', 'buttom':'0px'}">
+  <pdf-viewer [src]="globals.languageSelected == 'hebrew' ? '/assets/pdfs/hebrew/EverHotGuide.pdf' : '/assets/pdfs/english/EverHotGuide.pdf'"
+    [render-text]="true" [zoom]="0.5">
 
+  </pdf-viewer>
 
+ 
+</div-->
