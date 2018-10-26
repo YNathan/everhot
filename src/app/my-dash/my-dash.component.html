@@ -1,24 +1,27 @@
-<div [ngStyle]="{'background-image':'url(' + url + ')','height':'50%','width':'100%','background-position':'center','background-size':'cover','position':'relative','z-index': '0'}">
-
+<div
+  [ngStyle]="{'background-image':'url(' + url + ')','height':'50%','width':'100%','background-position':'center','background-size':'cover','position':'relative','z-index': '0'}">
+ 
   <div [ngStyle]="{'position':'fixed'}">
-    <div class="bird-container bird-container--one">
-      <div class="bird bird--one"></div>
-    </div>
-
-    <div class="bird-container bird-container--two">
-      <div class="bird bird--two"></div>
-    </div>
-
-    <div class="bird-container bird-container--three">
-      <div class="bird bird--three"></div>
-    </div>
-
-    <div class="bird-container bird-container--four">
-      <div class="bird bird--four"></div>
-    </div>
+  <div class="bird-container bird-container--one">
+    <div class="bird bird--one"></div>
   </div>
-  
-  <ul class="topnav">
+
+  <div class="bird-container bird-container--two">
+    <div class="bird bird--two"></div>
+  </div>
+
+  <div class="bird-container bird-container--three">
+    <div class="bird bird--three"></div>
+  </div>
+
+  <div class="bird-container bird-container--four">
+    <div class="bird bird--four"></div>
+  </div>
+</div>
+
+
+<app-menu></app-menu>
+  <!--ul class="topnav">
     <li>
       <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}" /></a>
     </li>
@@ -33,7 +36,7 @@
     <li class="right"><a routerLink="/gallery">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</a></li>
     <li class="right"><a routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a></li>
     <li class="right"><a routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</a></li>
-  </ul>
+  </ul-->
 
   <div class="hero-buttons">
     <img [src]="'/assets/images/WaterFliped.png'" id="blbl" height="150px">
@@ -70,9 +73,4 @@
   </div>
 </div>
 
-
-<div class="conn">
-  <iframe width="94.02985075%" height="450px" src="https://www.youtube.com/embed/ua6v5f5-wzU" frameborder="0" allow="autoplay; encrypted-media"
-    allowfullscreen></iframe>
-</div>
 

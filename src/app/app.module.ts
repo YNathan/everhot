@@ -47,6 +47,7 @@ import { ModalGalleryModule } from '@ks89/angular-modal-gallery'; // <----------
 import { faExternalLinkAlt, faPlus, faTimes, faDownload } from '@fortawesome/fontawesome-free-solid';
 import * as fontawesome from '@fortawesome/fontawesome';
 import { DialogComponent } from './dialog/dialog.component';
+import { MenuComponent } from './menu/menu.component';
 
 fontawesome.library.add(faExternalLinkAlt, faPlus, faTimes, faDownload);
 // *************************************************************************
@@ -72,6 +73,7 @@ const appRoutes: Routes = [
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
+    MenuComponent,
   ],
   entryComponents: [DialogComponent],
   imports: [

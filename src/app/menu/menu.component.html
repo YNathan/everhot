@@ -1,0 +1,20 @@
+<ul class="topnav">
+  <li>
+    <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}" /></a>
+  </li>
+  <li class="right"><a>
+      <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה" class="menuFont" [ngStyle]="{'max-width':'100px','border-radius':'10%'}">
+        
+        <mat-option *ngFor="let lng of globals.languages" [value]="lng.value" [ngStyle]="{'border-radius':'10%'}">
+          {{lng.viewValue }}
+        </mat-option>
+      </mat-select>
+    </a>
+  </li>
+  <li class="right"><a routerLink="/gallery" class="menuFont">{{globals.languageSelected
+      == 'hebrew' ? 'גלריה' : 'gallery'}}</a></li>
+  <li class="right"><a routerLink="/guide"  class="menuFont">{{globals.languageSelected
+      == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a></li>
+  <li class="right"><a routerLink="/contact"  class="menuFont">{{globals.languageSelected
+      == 'hebrew' ? 'צור קשר' : 'contact'}}</a></li>
+</ul>

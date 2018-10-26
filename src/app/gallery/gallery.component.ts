@@ -11,8 +11,11 @@ import {Globals} from '../globals';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor(public globals: Globals) { }
   url = '/assets/main2.jpg';
+
+  constructor() { }
+
+
   ngOnInit(): void {
   }
 }

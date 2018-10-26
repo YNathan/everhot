@@ -1,19 +1,5 @@
-<ul class="topnav">
-  <li>
-    <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}" /></a>
-  </li>
-  <li class="right"><a>
-      <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה" [ngStyle]="{'max-width':'50px','border-radius':'10%'}">
-        <mat-option *ngFor="let lng of globals.languages" [value]="lng.value" [ngStyle]="{'border-radius':'10%'}">
-          {{lng.viewValue }}
-        </mat-option>
-      </mat-select>
-    </a>
-  </li>
-  <li class="right"><a routerLink="/gallery">{{globals.languageSelected == 'hebrew' ? 'גלריה' : 'gallery'}}</a></li>
-  <li class="right"><a routerLink="/guide">{{globals.languageSelected == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a></li>
-  <li class="right"><a routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</a></li>
-</ul>
+<app-menu></app-menu>
+
 
 
 
@@ -32,14 +18,6 @@
 </section>
 
 <!-- Example actions -->
-<button (click)="pdfViewer.zoomIn()">Zoom In</button>
-<button (click)="pdfViewer.zoomOut()">Zoom out</button>
-<button (click)="pdfViewer.nextPage()">Next Page</button>
-<button (click)="pdfViewer.prevPage()">Prev Page</button>
-<!--button (click)="pdfViewer.turnLeft()">Turn the document left</button-->
-<!--button (click)="pdfViewer.search('PDF')">Search the world 'PDF'</button-->
-
-
 
 
 <!--div [ngStyle]="{'height': '700px', 'overflow': 'scroll', 'buttom':'0px'}">

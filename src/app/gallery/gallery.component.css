@@ -1,3 +1,12 @@
 body{
     background-image : url('/assets/main1.jpg')
 }
+
+.conn {
+    width: 94.02985075%;
+    max-width: 1260px;
+    padding: 0 2.25em 4em;
+    border-radius: 30%;
+    background: transparent;
+    background-size: 400% 400%;
+  }
