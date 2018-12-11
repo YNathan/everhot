@@ -22,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SimplePdfViewerModule } from 'simple-pdf-viewer';
 import {
-  MatGridListModule,
   MatCardModule,
   MatMenuModule,
   MatIconModule,
@@ -32,6 +31,7 @@ import {
   MatListModule,
   MatSelectModule, MatAccordion, MatNativeDateModule, MatAccordionDisplayMode, MatInputModule
 } from '@angular/material';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';

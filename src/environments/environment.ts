@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyDamC39JZPWXXcblKZ3b0MCWFYqy7eIMto",
-    authDomain: "everhotbucket-e4287.firebaseapp.com",
-    databaseURL: "https://everhotbucket-e4287.firebaseio.com",
-    projectId: "everhotbucket-e4287",
-    storageBucket: "",
-    messagingSenderId: "275932534074"
+    apiKey: "AIzaSyDcFCf2T67rT0a6SlHrFo5tqu_NORUw4p0",
+    authDomain: "everhotbucket.firebaseapp.com",
+    databaseURL: "https://everhotbucket.firebaseio.com",
+    projectId: "everhotbucket",
+    storageBucket: "everhotbucket.appspot.com",
+    messagingSenderId: "937359895813"
   }
 };
 

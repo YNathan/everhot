@@ -3,18 +3,18 @@
     <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}" /></a>
   </li>
   <li class="right"><a>
-      <mat-select [(value)]="globals.languageSelected" placeholder="Language/שפה" class="menuFont" [ngStyle]="{'max-width':'100px','border-radius':'10%'}">
+      <mat-select  (selectionChange)="doSomething($event)" [(value)]="globals.languageSelected" placeholder="Language/שפה" class="menuFont" [ngStyle]="{'max-width':'100px','border-radius':'10%'}">
         
         <mat-option *ngFor="let lng of globals.languages" [value]="lng.value" [ngStyle]="{'border-radius':'10%'}">
-          {{lng.viewValue }}
+        <b>  {{lng.viewValue }}</b>
         </mat-option>
       </mat-select>
     </a>
   </li>
-  <li class="right"><a routerLink="/gallery" class="menuFont">{{globals.languageSelected
-      == 'hebrew' ? 'גלריה' : 'gallery'}}</a></li>
-  <li class="right"><a routerLink="/guide"  class="menuFont">{{globals.languageSelected
-      == 'hebrew' ? 'חוברת הדרכה' : 'guide'}}</a></li>
-  <li class="right"><a routerLink="/contact"  class="menuFont">{{globals.languageSelected
-      == 'hebrew' ? 'צור קשר' : 'contact'}}</a></li>
+  <li class="right"><a routerLink="/gallery" class="menuFont"><b>{{globals.languageSelected
+      == 'hebrew' ? 'גלריה' : 'Gallery'}}</b></a></li>
+  <li class="right"><a routerLink="/guide"  class="menuFont"><b>{{globals.languageSelected
+      == 'hebrew' ? 'חוברת הדרכה' : 'Guide'}}</b></a></li>
+  <li class="right"><a routerLink="/contact"  class="menuFont"><b>{{globals.languageSelected
+      == 'hebrew' ? 'צור קשר' : 'Contact'}}</b></a></li>
 </ul>

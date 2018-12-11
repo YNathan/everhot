@@ -1,0 +1,7 @@
+p.rtl {
+    direction: rtl;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+  }

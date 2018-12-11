@@ -12,5 +12,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  doSomething(evt){
+    console.log(evt);
+  }
 }

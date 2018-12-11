@@ -10,3 +10,8 @@ body{
     background: transparent;
     background-size: 400% 400%;
   }
+  .video-container
+  {
+    text-align: center;
+    padding:20px 0;
+  }

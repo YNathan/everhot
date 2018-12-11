@@ -1,3 +1,40 @@
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 50%;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  transition: 0.3s;
+  width: 40%;
+}
+.card:hover{
+  box-shadow: 0 8px 16px 0 rgba(150, 110, 110, 0.2);
+}
+.card-container{
+  pading: 2px 16px;
+}
+
 ul {
   padding: 0;
   width: 780px;
@@ -290,4 +327,11 @@ button + button {
 
 .testImgs ks-modal-gallery:nth-child(odd) {
   background: #49b;
+}
+.plain-container {
+ width: inherit;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+
 }

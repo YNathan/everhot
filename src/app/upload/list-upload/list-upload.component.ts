@@ -24,13 +24,14 @@ import {
 import {Globals} from '../../globals';
 
 
+
 @Component({
   selector: 'list-upload',
   templateUrl: './list-upload.component.html',
   styleUrls: ['./list-upload.component.css']
 })
 export class ListUploadComponent implements OnInit {
-
+array = ["קרית משה","פסגת זאב מזרח","פסגת זאב צפון","גילה","בית נקופה","קרית משה","רחביה"];
   albums = [];
   areas = [];
   selectedArea = null;
@@ -48,7 +49,10 @@ export class ListUploadComponent implements OnInit {
    w: 360px
    */
   plainGalleryGrid: PlainGalleryConfig;
-
+  plainGalleryRow: PlainGalleryConfig = {
+    strategy: PlainGalleryStrategy.ROW,
+    layout: new LineLayout({ width: '200px', height: '200px' }, { length: 6, wrap: true }, 'center')
+  };
   constructor(private uploadService: UploadFileService, public golbals: Globals) {
     if (window.screen.width > 700) {
       this.plainGalleryGrid = {
@@ -124,8 +128,9 @@ export class ListUploadComponent implements OnInit {
   }
 
   selectedKsImages = [];
-
+  showPreview = false;
   setSelectedArea(area: any) {
+    this.showPreview = true;
     this.selectedArea = area;
     for (const i in this.albums) {
       if (this.albums[i].areaName === area) {

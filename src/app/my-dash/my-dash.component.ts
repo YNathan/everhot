@@ -36,17 +36,22 @@ export class MyDashComponent implements OnInit, AfterViewInit {
   imageHero: any;
 
   ngOnInit(): void {
-    this.url = '/assets/main1.jpg';
-    document.getElementById("blbl").style.width = '100%';
+    if(this.globals.languageSelected == 'hebrew'){
+      this.url = '/assets/mainHe.jpg';
+    }else{
+      this.url = '/assets/mainEn.jpg'; 
+    }
+   
+    //document.getElementById("blbl").style.width = '100%';
   }
 
   ngAfterViewInit() {
-    document.getElementById("blbl").style.width = '100%';
+    //document.getElementById("blbl").style.width = '100%';
   }
 
   openDialog(name): void {
     const dialogRef = this.dialog.open(DialogComponent, {
-      width: '250px',
+      direction : "rtl",
       data: {name: name, animal: this.animal}
     });
 

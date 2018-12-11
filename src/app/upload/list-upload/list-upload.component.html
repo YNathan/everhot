@@ -1,5 +1,25 @@
 <script src="../upload-file.service.ts" xmlns=""></script>
-<div class="dady">
+
+<mat-grid-list cols="3" rowHeight="2:1">
+  <div *ngFor="let area of areas">
+    <mat-grid-tile>
+      <div class="card" class="accordion" (click)="setSelectedArea(area)">
+        <div style="text-align: center">
+          <h4>{{area}}</h4>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </div>
+
+</mat-grid-list>
+<div  class="previews">
+    <section *ngIf="showPreview">
+      <ks-modal-gallery [id]="0" [modalImages]="selectedKsImages" [plainGalleryConfig]="plainGalleryRow"></ks-modal-gallery>
+    </section>
+  
+</div>
+
+<!--div class="dady">
   <div class="child">
     <mat-accordion class="matAccor" [style.width.px]="accWidth">
       <div *ngFor="let area of areas" [style.width.px]="accWidth">
@@ -20,4 +40,4 @@
       </div>
     </mat-accordion>
   </div>
-</div>
+</div-->

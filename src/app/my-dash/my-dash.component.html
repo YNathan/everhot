@@ -1,27 +1,116 @@
-<div
-  [ngStyle]="{'background-image':'url(' + url + ')','height':'50%','width':'100%','background-position':'center','background-size':'cover','position':'relative','z-index': '0'}">
- 
-  <div [ngStyle]="{'position':'fixed'}">
-  <div class="bird-container bird-container--one">
-    <div class="bird bird--one"></div>
-  </div>
+<div [ngStyle]="{'background-image':'url(' + url + ')','background-size': '120% 100%','background-repeat': 'no-repeat','background-position':'center','height':'200%','width':'100%','position':'relative','z-index': '0'}">
+    <div [ngStyle]="{'position':'fixed'}">
+        <div class="bird-container bird-container--one">
+            <div class="bird bird--one"></div>
+        </div>
 
-  <div class="bird-container bird-container--two">
-    <div class="bird bird--two"></div>
-  </div>
+        <div class="bird-container bird-container--two">
+            <div class="bird bird--two"></div>
+        </div>
 
-  <div class="bird-container bird-container--three">
-    <div class="bird bird--three"></div>
-  </div>
+        <div class="bird-container bird-container--three">
+            <div class="bird bird--three"></div>
+        </div>
 
-  <div class="bird-container bird-container--four">
-    <div class="bird bird--four"></div>
-  </div>
-</div>
+        <div class="bird-container bird-container--four">
+            <div class="bird bird--four"></div>
+        </div>
+        <div class="container">
+
+            <div class="bubbles-container">
+                <svg class="bubbles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 701 1024" style="overflow: visible;">
+
+                    <g class="bubbles-large" stroke-width="7">
+                        <g>
+                            <g transform="translate(10 940)">
+                                <circle cx="35" cy="35" r="35" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(373 940)">
+                                <circle cx="35" cy="35" r="35" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(408 940)">
+                                <circle cx="35" cy="35" r="35" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(621 940)">
+                                <circle cx="35" cy="35" r="35" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(179 940)">
+                                <circle cx="35" cy="35" r="35" />
+                            </g>
+                        </g>
+                    </g>
+
+                    <g class="bubbles-small" stroke-width="4">
+                        <g>
+                            <g transform="translate(147 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(255 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(573 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(429 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(91 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(640 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(321 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(376 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(376 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                        <g>
+                            <g transform="translate(497 984)">
+                                <circle cx="15" cy="15" r="15" />
+                            </g>
+                        </g>
+                    </g>
+
+                </svg>
+            </div>
+            <br>
+
+        </div>
+    </div>
 
 
-<app-menu></app-menu>
-  <!--ul class="topnav">
+    <app-menu></app-menu>
+    <!--ul class="topnav">
     <li>
       <a class="active" href="#"><img src="/assets/images/everhotLogo.png" [ngStyle]="{'max-height':'55px'}" /></a>
     </li>
@@ -38,39 +127,40 @@
     <li class="right"><a routerLink="/contact">{{globals.languageSelected == 'hebrew' ? 'צור קשר' : 'contact'}}</a></li>
   </ul-->
 
-  <div class="hero-buttons">
-    <img [src]="'/assets/images/WaterFliped.png'" id="blbl" height="150px">
-  </div>
+    <div class="hero-buttons">
+        <!--img [src]="'/assets/images/WaterFliped.png'" id="blbl" height="150px"-->
+    </div>
+    <br>
+    <br>
+    <br>
 </div>
 
 
-<br><br><br><br><br>
+
 
 <br>
 <div class="conn">
-  <div class="rowSun">
-    <img (click)="openDialog('easyInstall')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/easyinstall.png' : '/assets/images/english/easyinstall.png'"
-      alt="" width="220">
-    <img (click)="openDialog('monay')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/money.png' : '/assets/images/english/money.png'"
-      alt="" width="220">
-  </div>
-  <div class="rowSun">
-    <img (click)="openDialog('alerting')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/alerting.png' : '/assets/images/english/alerting.png'"
-      alt="" width="220">
-
-    <img src="/assets/PANEL.png" alt="" width="420">
-
-    <img (click)="openDialog('madeinisrael')" data-target="#exampleModal" data-toggle="modal" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/madeinisrael.png' : '/assets/images/english/madeinisrael.png'"
-      src="/assets/images/english/madeinisrael.png" alt="" width="220">
-  </div>
-  <div class="rowSun">
-    <img (click)="openDialog('integrated')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/integrated.png' : '/assets/images/english/integrated.png'"
-      alt="" width="220">
-    <img (click)="openDialog('shabbat')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/shabbat.png' : '/assets/images/english/shabbat.png'"
-      alt="" width="220">
-    <img (click)="openDialog('avnit')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/avnit.png' : '/assets/images/english/avnit.png'"
-      alt="" width="220">
-  </div>
+    <div class="rowSun">
+        <img (click)="openDialog('easyInstall')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/easyinstall.png' : '/assets/images/english/easyinstall.png'"
+            alt="" width="220">
+        <img (click)="openDialog('monay')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/money.png' : '/assets/images/english/money.png'"
+            alt="" width="220">
+    </div>
+    <div class="rowSun">
+        <img (click)="openDialog('alerting')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/alerting.png' : '/assets/images/english/alerting.png'"
+            alt="" width="220">
+        
+            <img class="childSun" src="/assets/PANEL.png" alt="" width="420">
+        
+        <img (click)="openDialog('madeinisrael')" data-target="#exampleModal" data-toggle="modal" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/madeinisrael.png' : '/assets/images/english/madeinisrael.png'"
+            src="/assets/images/english/madeinisrael.png" alt="" width="220">
+    </div>
+    <div class="rowSun">
+        <img (click)="openDialog('integrated')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/integrated.png' : '/assets/images/english/integrated.png'"
+            alt="" width="220">
+        <img (click)="openDialog('shabbat')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/shabbat.png' : '/assets/images/english/shabbat.png'"
+            alt="" width="220">
+        <img (click)="openDialog('avnit')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/avnit.png' : '/assets/images/english/avnit.png'"
+            alt="" width="220">
+    </div>
 </div>
-
-
