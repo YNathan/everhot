@@ -66,6 +66,56 @@ border-color:#d7ea16 #2eb9ce #ce2e61 #2eb9ce;
   
 }
 
+
+
+
+
+.conn .rowSunMiddle {
+  z-index: 2;
+  margin: 20px;
+  text-align: center;
+  
+}
+
+.conn .rowSunMiddle img {
+  margin: 0 20px;
+  transition: 0.3s;
+}
+
+.conn .rowSunMiddle img:nth-child(1):hover {
+
+  background-color: grey;
+  border-radius: 10%;
+  
+border-top:10px dashed #d7ea16;
+border-right:10px dashed #2eb9ce;
+border-bottom:10px dashed #ce2e61;
+border-left:10px dashed #2eb9ce;
+
+border-width:10px 10px 10px 10px;
+border-style:dashed dashed dashed dashed;
+border-color:#d7ea16 #2eb9ce #ce2e61 #2eb9ce;
+}
+.conn .rowSunMiddle img:nth-child(3):hover {
+
+  background-color: grey;
+  border-radius: 10%;
+  
+border-top:10px dashed #d7ea16;
+border-right:10px dashed #2eb9ce;
+border-bottom:10px dashed #ce2e61;
+border-left:10px dashed #2eb9ce;
+
+border-width:10px 10px 10px 10px;
+border-style:dashed dashed dashed dashed;
+border-color:#d7ea16 #2eb9ce #ce2e61 #2eb9ce;
+}
+.conn .rowSunMiddle .childSun img:hover {
+  border-radius: 0%;
+  background-color: transparents;
+  
+}
+
 /* =================================
   Base Element Styles
 ==================================== */

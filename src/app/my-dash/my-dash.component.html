@@ -1,4 +1,4 @@
-<div [ngStyle]="{'background-image':'url(' + url + ')','background-size': '120% 100%','background-repeat': 'no-repeat','background-position':'center','height':'200%','width':'100%','position':'relative','z-index': '0'}">
+<div [ngStyle]="{'background-image':'url(' + url + ')','background-size': '70% 100%','background-repeat': 'no-repeat','background-position':'center','height':'200%','width':'100%','position':'relative','z-index': '0'}">
     <div [ngStyle]="{'position':'fixed'}">
         <div class="bird-container bird-container--one">
             <div class="bird bird--one"></div>
@@ -146,12 +146,12 @@
         <img (click)="openDialog('monay')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/money.png' : '/assets/images/english/money.png'"
             alt="" width="220">
     </div>
-    <div class="rowSun">
+    <div class="rowSunMiddle">
         <img (click)="openDialog('alerting')" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/alerting.png' : '/assets/images/english/alerting.png'"
             alt="" width="220">
-        
-            <img class="childSun" src="/assets/PANEL.png" alt="" width="420">
-        
+
+        <img class="childSun" src="/assets/PANEL.png" alt="" width="420">
+
         <img (click)="openDialog('madeinisrael')" data-target="#exampleModal" data-toggle="modal" [src]="globals.languageSelected == 'hebrew' ? '/assets/images/hebrew/madeinisrael.png' : '/assets/images/english/madeinisrael.png'"
             src="/assets/images/english/madeinisrael.png" alt="" width="220">
     </div>
