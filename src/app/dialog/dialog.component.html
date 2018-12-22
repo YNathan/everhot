@@ -1,8 +1,6 @@
-<!--h1 mat-dialog-title>{{data.name}}</h1-->
-
 <div mat-dialog-content>
 
-  <div *ngIf="data.name == 'easyInstall'" >
+  <div *ngIf="data.name == 'easyInstall'" class="container">
    <div> <img [src]="'/assets/images/ICON2.png'" alt="" width="110"></div>
     <div >
       <b> {{globals.languageSelected == 'hebrew' ? 'התקנה פשוטה' : 'easy to install'}}</b>
@@ -10,13 +8,17 @@
     <div mat-dialog-content ><p>	התקנת המערכת:
       מערכת EVERHOT מתאימה לכל בית בגלל שלא דורשת תשתית תקשורת חדשה וחיבור לאינטרנט אלא מתלבשת על תשתית חשמל קיימת בעזרת שימוש בטכנולוגיית PLC (Power Line Communication).  
       </p></div>
+      <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
   </div>
-  <div *ngIf="data.name == 'monay'" >
+  
+  <div *ngIf="data.name == 'monay'" class="container">
     <div> <img [src]="'/assets/images/ICON1.png'" alt="" width="110"></div>
     <div>
       <b> {{globals.languageSelected == 'hebrew' ? 'זול' : 'cheaper'}}</b>
     </div>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
   </div>
+
   <div *ngIf="data.name == 'alerting'"  class="container">
     <img [src]="'/assets/images/ICON4.png'" alt="" width="110">
     <div class="item">
@@ -27,6 +29,7 @@
       במקביל למערבל המים שמורכב לצורך מניעת כוויות 
       ניתן להוסיף משאבת סחרור קטנה כדי שמערכת EVERHOT תבצע סירקולציה בין קולטי השמש ודוד החשמל כך שהטמפרטורות יישארו נמוכות מ-60 מעלות, חשוב לציין שסירקולציה הזו לא מקטינה כמות המים החמים בדוד וגם שומרת על תשתית ואביזרים סניטריים. בנוסף, המשאבה מונעת קיפאון של מים בימים החורפים ובכך מונעת התפוצצות צינורות ופקקים. 
       </p></div>
+      <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
   </div>
   <div  *ngIf="data.name == 'integrated'"  class="container">
     <div class="item"><img [src]="'/assets/images/ICON5.png'" alt="" width="110"></div>
@@ -51,15 +54,19 @@
         וחסכוני.
         (כמו הפעלה מיידית, תכנון הפעלה מראש חד פעמים, תכנון הפעלה שבועית, תכנון הפעלה קבועה).
       </p>
+    
     </div>
-
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
   </div>
-  <div *ngIf="data.name == 'shabbat'">
+
+  <div *ngIf="data.name == 'shabbat'" class="container">
     <img [src]="'/assets/images/shabbosKeaper.png'" alt="" width="110">
     <div>
       <b> {{globals.languageSelected == 'hebrew' ? 'המערכת נוחה להפעלה לשומרי שבת' : 'easy configurable for shabbos keeper'}}</b>
     </div>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
   </div>
+
   <div *ngIf="data.name == 'avnit'" class="container">
     <div class="item"><img [src]="'/assets/images/ICON7.png'" alt="" width="110"></div>
     <div class="item">
@@ -72,8 +79,9 @@
         בנוסף, במערכת תיהיה אפשרות לשלוח הודעה לאיש מקצוע המוגדר ע"י הלקוח לצורך טיפול בגוף החימום או כול תקלה אחרת.
       </p>
     </div>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
   </div>
-  <div *ngIf="data.name == 'madeinisrael'">
+  <div *ngIf="data.name == 'madeinisrael'" class="container">
     <img [src]="'/assets/images/ICON3.png'" alt="" width="110">
     <div>
       <b> {{globals.languageSelected == 'hebrew' ? 'מיוצר בישראל' : 'made in israel'}}</b>
@@ -82,11 +90,9 @@
       <p> מוצר זה הינו פרי פיתוח ישראלי נבנה מאפס בארץ צד שרת ולקוח כאחד על ידי מתכנתים ישראלים כמו כן העיצוב גם כן הוא ישראלי
       </p>
     </div>
+   
+      <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
   </div>
-
   
-</div>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
 </div>
 

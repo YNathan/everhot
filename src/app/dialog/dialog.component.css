@@ -3,5 +3,9 @@ p.rtl {
 }
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    text-align: center;
+    
   }
