@@ -1,17 +1,27 @@
 <script src="../upload-file.service.ts" xmlns=""></script>
 
-<mat-grid-list cols="3" rowHeight="2:1">
-  <div *ngFor="let area of areas">
-    <mat-grid-tile>
-      <div class="card" class="accordion" (click)="setSelectedArea(area)">
-        <div style="text-align: center">
-          <h4>{{area}}</h4>
-        </div>
-      </div>
-    </mat-grid-tile>
+<div *ngIf="showPreview" class="card" class="accordion" class="container" (click)="showPreview = false">
+  <div style="text-align: center">
+    <h4>חזרה לאלבומים</h4>
   </div>
+</div>
+<br>
+<br>
 
-</mat-grid-list>
+<div  *ngIf="!showPreview">
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <div *ngFor="let area of areas">
+      <mat-grid-tile>
+        <div class="card" class="accordion" (click)="setSelectedArea(area)">
+          <div style="text-align: center">
+            <h4>{{area}}</h4>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>
+
 <div  class="previews">
     <section *ngIf="showPreview">
       <ks-modal-gallery [id]="0" [modalImages]="selectedKsImages" [plainGalleryConfig]="plainGalleryRow"></ks-modal-gallery>
@@ -19,6 +29,10 @@
   
 </div>
 
+<div *ngIf="!showPreview" class="video-container" >
+  <iframe  width="560" height="315" src="https://www.youtube.com/embed/ua6v5f5-wzU" frameborder="10" allow="autoplay; encrypted-media"
+    allowfullscreen></iframe>
+</div>
 <!--div class="dady">
   <div class="child">
     <mat-accordion class="matAccor" [style.width.px]="accWidth">
