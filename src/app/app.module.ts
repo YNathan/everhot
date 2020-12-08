@@ -79,7 +79,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      {onSameUrlNavigation: 'reload', enableTracing: true } // <-- debugging purposes only
+      {onSameUrlNavigation: 'reload' } 
     ),
     MatDialogModule,
     MDBBootstrapModule.forRoot(),

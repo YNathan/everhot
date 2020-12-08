@@ -31,7 +31,7 @@ import {Globals} from '../../globals';
   styleUrls: ['./list-upload.component.css']
 })
 export class ListUploadComponent implements OnInit {
-array = ["קרית משה","פסגת זאב מזרח","פסגת זאב צפון","גילה","בית נקופה","קרית משה","רחביה"];
+
   albums = [];
   areas = [];
   selectedArea = null;
